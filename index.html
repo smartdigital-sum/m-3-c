@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Elegant Salon & Spa - Luxury hair, spa, and beauty services. Book your appointment today." />
+  <title>Elegant Salon & Spa — Where Beauty Meets Elegance</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-inner">
+      <svg viewBox="0 0 100 100" class="loader-circle">
+        <circle cx="50" cy="50" r="45" />
+      </svg>
+      <span>Elegant</span>
+    </div>
+  </div>
+
+  <!-- Promo Modal -->
+  <div id="promoModal" class="promo-modal">
+    <div class="promo-backdrop"></div>
+    <div class="promo-card">
+      <button class="promo-close" id="closePromo"><i class="fas fa-times"></i></button>
+      <div class="promo-body">
+        <p class="promo-eyebrow">New Client Offer</p>
+        <h2>20<span>%</span> Off</h2>
+        <p class="promo-desc">Your first visit. All services included.</p>
+        <a href="#booking" class="btn-gold" onclick="closeModal()">Claim Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <i class="fas fa-spa"></i>
+        <span>Elegant</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#booking" class="nav-cta">Book Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80')"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">Est. 2010 — New York</p>
+      <h1 class="hero-title reveal">Where Beauty<br><em>Meets Elegance</em></h1>
+      <p class="hero-sub reveal">Luxury hair, spa & beauty services for the discerning client.</p>
+      <div class="hero-actions reveal">
+        <a href="#booking" class="btn-gold">Book Appointment</a>
+        <a href="#services" class="btn-ghost">Explore Services</a>
+      </div>
+      <div class="hero-status reveal">
+        <span class="status-dot"></span>
+        <span id="businessStatus">Open Today · Mon–Sat 9AM–8PM</span>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- Stats Strip -->
+  <section class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat">
+        <strong>15+</strong><span>Years of Excellence</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <strong>50K+</strong><span>Happy Clients</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <strong>25+</strong><span>Expert Stylists</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <strong>100+</strong><span>Signature Services</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about-section">
+    <div class="about-grid">
+      <div class="about-images">
+        <div class="about-img-main">
+          <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=700&q=80" alt="Elegant Salon Interior" />
+        </div>
+        <div class="about-img-accent">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80" alt="Beauty Services" />
+        </div>
+        <div class="about-badge-float">
+          <i class="fas fa-award"></i>
+          <p>Award Winning<br>Salon 2024</p>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">A Decade of<br><em>Transformations</em></h2>
+        <p>For over fifteen years, Elegant Salon & Spa has been the sanctuary where New York's most discerning clients come to be seen, refreshed, and renewed. We blend timeless techniques with contemporary innovation — all delivered by a team of passionate experts.</p>
+        <p>We believe beauty is an experience, not just a service. Every appointment is crafted to leave you feeling extraordinary.</p>
+        <a href="#booking" class="btn-gold">Book Your Experience</a>
+      </div>
+    </div>
+
+    <!-- Team -->
+    <div class="team-section">
+      <div class="container-narrow">
+        <p class="section-eyebrow">The Artists</p>
+        <h2 class="section-title">Meet Our <em>Expert Team</em></h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-img">
+            <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&q=80" alt="Sarah Johnson" />
+            <div class="team-hover">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
+          <h4>Sarah Johnson</h4>
+          <p class="team-role">Master Stylist</p>
+          <p class="team-spec">Color Specialist · 12 yrs</p>
+        </div>
+        <div class="team-card">
+          <div class="team-img">
+            <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?w=400&q=80" alt="Emily Chen" />
+            <div class="team-hover">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
+          <h4>Emily Chen</h4>
+          <p class="team-role">Spa Director</p>
+          <p class="team-spec">Facial Expert · 10 yrs</p>
+        </div>
+        <div class="team-card">
+          <div class="team-img">
+            <img src="https://images.unsplash.com/photo-1598257006458-087169a1f08d?w=400&q=80" alt="Michael Ross" />
+            <div class="team-hover">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
+          <h4>Michael Ross</h4>
+          <p class="team-role">Senior Stylist</p>
+          <p class="team-spec">Men's Grooming · 8 yrs</p>
+        </div>
+        <div class="team-card">
+          <div class="team-img">
+            <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&q=80" alt="Jessica Martinez" />
+            <div class="team-hover">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
+          <h4>Jessica Martinez</h4>
+          <p class="team-role">Nail Artist</p>
+          <p class="team-spec">Nail Art & Design · 7 yrs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services-section">
+    <div class="container-narrow">
+      <p class="section-eyebrow">What We Offer</p>
+      <h2 class="section-title">Our <em>Signature Services</em></h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-number">01</div>
+        <div class="service-icon"><i class="fas fa-cut"></i></div>
+        <h3>Hair Services</h3>
+        <p>Transform your look with our expert team of colour specialists and stylists.</p>
+        <ul>
+          <li>Haircut & Styling</li>
+          <li>Hair Coloring</li>
+          <li>Highlights & Balayage</li>
+          <li>Keratin & Smoothing</li>
+          <li>Hair Extensions</li>
+        </ul>
+        <a href="#pricing" class="service-link">View Pricing <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <div class="service-icon"><i class="fas fa-spa"></i></div>
+        <h3>Spa Services</h3>
+        <p>Relax and rejuvenate with our curated luxury spa treatments.</p>
+        <ul>
+          <li>Facials & Skincare</li>
+          <li>Deep Tissue Massage</li>
+          <li>Hot Stone Therapy</li>
+          <li>Body Scrubs</li>
+          <li>Aromatherapy</li>
+        </ul>
+        <a href="#pricing" class="service-link">View Pricing <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <div class="service-icon"><i class="fas fa-hand-sparkles"></i></div>
+        <h3>Nail Services</h3>
+        <p>Artistic precision and luxury care for hands and feet.</p>
+        <ul>
+          <li>Classic & Gel Manicure</li>
+          <li>Spa Pedicure</li>
+          <li>Nail Art & Design</li>
+          <li>Acrylic Nails</li>
+          <li>Mani-Pedi Combo</li>
+        </ul>
+        <a href="#pricing" class="service-link">View Pricing <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card service-featured">
+        <div class="featured-label">Most Popular</div>
+        <div class="service-number">04</div>
+        <div class="service-icon"><i class="fas fa-ring"></i></div>
+        <h3>Bridal Packages</h3>
+        <p>Look extraordinary on the most important day of your life.</p>
+        <ul>
+          <li>Bridal Hair Styling</li>
+          <li>Bridal Makeup</li>
+          <li>Pre-Wedding Treatments</li>
+          <li>Bridal Party Services</li>
+          <li>Trial Sessions</li>
+        </ul>
+        <a href="#booking" class="service-link service-link-gold">Book Consultation <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="gallery-section">
+    <div class="container-narrow">
+      <p class="section-eyebrow">Our Work</p>
+      <h2 class="section-title">The <em>Gallery</em></h2>
+    </div>
+    <div class="gallery-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="hair">Hair</button>
+      <button class="filter-btn" data-filter="nails">Nails</button>
+      <button class="filter-btn" data-filter="makeup">Makeup</button>
+      <button class="filter-btn" data-filter="spa">Spa</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item" data-category="hair">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Hair Styling" />
+        <div class="gallery-overlay"><span>Hair Styling</span></div>
+      </div>
+      <div class="gallery-item tall" data-category="hair">
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&q=80" alt="Balayage" />
+        <div class="gallery-overlay"><span>Balayage</span></div>
+      </div>
+      <div class="gallery-item" data-category="nails">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80" alt="Nail Art" />
+        <div class="gallery-overlay"><span>Nail Art</span></div>
+      </div>
+      <div class="gallery-item wide" data-category="makeup">
+        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&q=80" alt="Bridal Makeup" />
+        <div class="gallery-overlay"><span>Bridal Makeup</span></div>
+      </div>
+      <div class="gallery-item" data-category="makeup">
+        <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&q=80" alt="Evening Look" />
+        <div class="gallery-overlay"><span>Evening Look</span></div>
+      </div>
+      <div class="gallery-item" data-category="spa">
+        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Facial Treatment" />
+        <div class="gallery-overlay"><span>Facial</span></div>
+      </div>
+      <div class="gallery-item tall" data-category="spa">
+        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80" alt="Massage" />
+        <div class="gallery-overlay"><span>Massage</span></div>
+      </div>
+      <div class="gallery-item" data-category="hair">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Salon Interior" />
+        <div class="gallery-overlay"><span>Our Space</span></div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <button class="lb-close" id="lbClose"><i class="fas fa-times"></i></button>
+      <button class="lb-nav lb-prev" id="lbPrev"><i class="fas fa-chevron-left"></i></button>
+      <button class="lb-nav lb-next" id="lbNext"><i class="fas fa-chevron-right"></i></button>
+      <img id="lbImage" src="" alt="" />
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing-section">
+    <div class="promo-banner">
+      <i class="fas fa-leaf"></i>
+      Spring Special: 15% OFF all spa packages this month
+      <i class="fas fa-leaf"></i>
+    </div>
+    <div class="container-narrow">
+      <p class="section-eyebrow">Transparent Rates</p>
+      <h2 class="section-title">Our <em>Pricing</em></h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-head">
+          <i class="fas fa-cut"></i>
+          <h3>Hair Services</h3>
+        </div>
+        <ul class="price-list">
+          <li><span>Women's Haircut</span><span>$45–65</span></li>
+          <li><span>Men's Haircut</span><span>$25–35</span></li>
+          <li><span>Full Color</span><span>$80–150</span></li>
+          <li><span>Highlights</span><span>$90–180</span></li>
+          <li><span>Balayage</span><span>$120–200</span></li>
+          <li><span>Keratin Treatment</span><span>$150–300</span></li>
+          <li><span>Blowout & Style</span><span>$35–50</span></li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-head">
+          <i class="fas fa-spa"></i>
+          <h3>Spa Services</h3>
+        </div>
+        <ul class="price-list">
+          <li><span>Classic Facial (60 min)</span><span>$65</span></li>
+          <li><span>Anti-Aging Facial (75 min)</span><span>$95</span></li>
+          <li><span>Swedish Massage (60 min)</span><span>$75</span></li>
+          <li><span>Deep Tissue (60 min)</span><span>$85</span></li>
+          <li><span>Hot Stone (90 min)</span><span>$120</span></li>
+          <li><span>Body Scrub</span><span>$70</span></li>
+          <li><span>Full Spa Package (3 hrs)</span><span>$200</span></li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-head">
+          <i class="fas fa-hand-sparkles"></i>
+          <h3>Nail Services</h3>
+        </div>
+        <ul class="price-list">
+          <li><span>Classic Manicure</span><span>$25</span></li>
+          <li><span>Gel Manicure</span><span>$40</span></li>
+          <li><span>Spa Pedicure</span><span>$45</span></li>
+          <li><span>Gel Pedicure</span><span>$55</span></li>
+          <li><span>Acrylic Full Set</span><span>$50</span></li>
+          <li><span>Nail Art (per nail)</span><span>$5–15</span></li>
+          <li><span>Mani-Pedi Combo</span><span>$65</span></li>
+        </ul>
+      </div>
+      <div class="pricing-card pricing-featured">
+        <div class="pricing-badge">Special</div>
+        <div class="pricing-head">
+          <i class="fas fa-ring"></i>
+          <h3>Bridal Packages</h3>
+        </div>
+        <ul class="price-list">
+          <li><span>Bridal Hair Styling</span><span>$150</span></li>
+          <li><span>Bridal Makeup</span><span>$120</span></li>
+          <li><span>Trial Session</span><span>$80</span></li>
+          <li><span>Bride + 3 Bridesmaids</span><span>$450</span></li>
+          <li><span>Complete Bridal Package</span><span>$350</span></li>
+          <li><span>Pre-Wedding Spa Day</span><span>$280</span></li>
+          <li class="price-highlight"><span>Premium Bridal Experience</span><span>$600</span></li>
+        </ul>
+        <a href="#booking" class="btn-gold">Book Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking" class="booking-section">
+    <div class="booking-grid">
+      <div class="booking-left">
+        <p class="section-eyebrow light">Reserve Your Time</p>
+        <h2 class="section-title light">Book Your <em>Appointment</em></h2>
+        <div class="booking-perks">
+          <div class="perk">
+            <i class="fas fa-certificate"></i>
+            <div><strong>Expert Professionals</strong><p>Certified and experienced beauty specialists</p></div>
+          </div>
+          <div class="perk">
+            <i class="fas fa-star"></i>
+            <div><strong>Premium Products</strong><p>Only the finest, trusted brands</p></div>
+          </div>
+          <div class="perk">
+            <i class="fas fa-clock"></i>
+            <div><strong>Flexible Scheduling</strong><p>Convenient appointment times, 7 days a week</p></div>
+          </div>
+          <div class="perk">
+            <i class="fas fa-shield-alt"></i>
+            <div><strong>Safe & Hygienic</strong><p>Strict sanitization protocols throughout</p></div>
+          </div>
+        </div>
+        <div class="booking-contact-links">
+          <a href="tel:+1234567890"><i class="fas fa-phone-alt"></i> (123) 456-7890</a>
+          <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+        </div>
+      </div>
+      <div class="booking-right">
+        <form id="bookingForm" class="booking-form" novalidate>
+          <div class="form-group">
+            <label for="b-name">Full Name</label>
+            <input type="text" id="b-name" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="b-email">Email</label>
+              <input type="email" id="b-email" placeholder="jane@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="b-phone">Phone</label>
+              <input type="tel" id="b-phone" placeholder="(123) 456-7890" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="b-service">Service</label>
+            <select id="b-service" required>
+              <option value="">Choose a service…</option>
+              <optgroup label="Hair Services">
+                <option>Haircut & Styling</option>
+                <option>Hair Coloring</option>
+                <option>Highlights/Balayage</option>
+                <option>Keratin Treatment</option>
+              </optgroup>
+              <optgroup label="Spa Services">
+                <option>Facial Treatment</option>
+                <option>Massage Therapy</option>
+                <option>Full Spa Package</option>
+              </optgroup>
+              <optgroup label="Nail Services">
+                <option>Manicure</option>
+                <option>Pedicure</option>
+                <option>Mani-Pedi Combo</option>
+              </optgroup>
+              <optgroup label="Bridal">
+                <option>Complete Bridal Package</option>
+                <option>Bridal Consultation</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="b-date">Preferred Date</label>
+              <input type="date" id="b-date" required />
+            </div>
+            <div class="form-group">
+              <label for="b-time">Preferred Time</label>
+              <select id="b-time" required>
+                <option value="">Select time…</option>
+                <option>9:00 AM</option>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>12:00 PM</option>
+                <option>1:00 PM</option>
+                <option>2:00 PM</option>
+                <option>3:00 PM</option>
+                <option>4:00 PM</option>
+                <option>5:00 PM</option>
+                <option>6:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="b-notes">Special Requests</label>
+            <textarea id="b-notes" rows="3" placeholder="Any notes or requests…"></textarea>
+          </div>
+          <button type="submit" class="btn-gold btn-full">Confirm Booking</button>
+          <div id="bookingSuccess" class="form-success" style="display:none">
+            <i class="fas fa-check-circle"></i> Appointment request sent! We'll confirm shortly.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container-narrow">
+      <p class="section-eyebrow">Client Love</p>
+      <h2 class="section-title"><em>What They Say</em></h2>
+      <div class="google-badge">
+        <i class="fab fa-google"></i>
+        <span class="rating-big">4.9</span>
+        <div>
+          <div class="stars-row">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>Based on 500+ reviews</p>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-track-wrapper">
+      <div class="testimonials-track" id="testimonialsTrack">
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <p>"Absolutely amazing experience! Sarah did an incredible job with my hair color. The salon is beautiful, clean, and the staff are so professional. I've finally found my go-to salon!"</p>
+          <div class="t-author">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80" alt="Emma Wilson" />
+            <div><strong>Emma Wilson</strong><span>Regular Client</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <p>"The spa services here are phenomenal! Emily's facials are pure magic. I always leave feeling refreshed and rejuvenated. Highly recommend for quality spa treatments."</p>
+          <div class="t-author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80" alt="Sophia Chen" />
+            <div><strong>Sophia Chen</strong><span>Spa Enthusiast</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <p>"Best salon experience ever! Got the bridal package for my wedding and everything was perfect. The team made me feel like a princess. Thank you for making my special day even more beautiful!"</p>
+          <div class="t-author">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&q=80" alt="Rachel Martinez" />
+            <div><strong>Rachel Martinez</strong><span>Bride</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <p>"Jessica's nail art skills are outstanding! I get so many compliments. The attention to detail and creativity is unmatched. Won't go anywhere else for my mani-pedis!"</p>
+          <div class="t-author">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&q=80" alt="Olivia Brown" />
+            <div><strong>Olivia Brown</strong><span>Nail Art Lover</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="t-controls">
+        <button id="tPrev"><i class="fas fa-arrow-left"></i></button>
+        <div class="t-dots" id="tDots"></div>
+        <button id="tNext"><i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="section-eyebrow">Get In Touch</p>
+        <h2 class="section-title">Visit <em>Our Salon</em></h2>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Address</strong>
+              <p>123 Elegance Avenue<br>Beauty District, NY 10001</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <strong>Call Us</strong>
+              <p><a href="tel:+1234567890">(123) 456-7890</a></p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:hello@elegantsa.com">hello@elegantsa.com</a></p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="far fa-clock"></i>
+            <div>
+              <strong>Hours</strong>
+              <p>Mon–Sat: 9AM–8PM<br>Sunday: 10AM–6PM</p>
+            </div>
+          </div>
+        </div>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          <a href="https://wa.me/1234567890" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425878428698!3d40.74076894379132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <form id="contactForm" class="contact-form">
+          <h3>Send a Message</h3>
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Your name" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="you@email.com" required />
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" placeholder="Subject" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="4" placeholder="How can we help?" required></textarea>
+          </div>
+          <button type="submit" class="btn-gold btn-full"><i class="fas fa-paper-plane"></i> Send Message</button>
+          <div id="contactSuccess" class="form-success" style="display:none">
+            <i class="fas fa-check-circle"></i> Message sent! We'll be in touch soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo"><i class="fas fa-spa"></i> Elegant Salon & Spa</div>
+        <p>Experience luxury and elegance with our professional beauty services. Your satisfaction is our priority.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Hair Styling</a></li>
+          <li><a href="#services">Spa Treatments</a></li>
+          <li><a href="#services">Nail Services</a></li>
+          <li><a href="#services">Bridal Packages</a></li>
+          <li><a href="#services">Gift Certificates</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h5>Newsletter</h5>
+        <p>Subscribe for exclusive offers and beauty tips.</p>
+        <form id="newsletterForm" class="newsletter-form">
+          <input type="email" placeholder="your@email.com" required />
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+        <div id="newsletterSuccess" class="form-success" style="display:none">
+          <i class="fas fa-check"></i> Subscribed!
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Elegant Salon & Spa. All rights reserved. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- Mobile Call Button -->
+  <a href="tel:+1234567890" class="call-float"><i class="fas fa-phone-alt"></i></a>
+
+  <script src="script.js"></script>
+</body>
+</html>
