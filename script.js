@@ -3,6 +3,31 @@
 // =============================================
 
 document.addEventListener('DOMContentLoaded', () => {
+  function getContactValue(raw, type) {
+    const value = String(raw || '');
+    if (type === 'phone') {
+      return value.replace(/^tel:/i, '').replace(/^https?:\/\/wa\.me\//i, '').replace(/\D/g, '');
+    }
+    if (type === 'email') {
+      return value.replace(/^mailto:/i, '').trim();
+    }
+    return value.trim();
+  }
+
+  function openWhatsAppDraft(rawPhone, lines) {
+    const phone = getContactValue(rawPhone, 'phone');
+    if (!phone) return;
+    const text = encodeURIComponent(lines.filter(Boolean).join('\n'));
+    window.open(`https://wa.me/${phone}?text=${text}`, '_blank', 'noopener');
+  }
+
+  function openEmailDraft(rawEmail, subject, lines) {
+    const email = getContactValue(rawEmail, 'email');
+    if (!email) return;
+    const body = encodeURIComponent(lines.filter(Boolean).join('\n'));
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+  }
+
 
   // ── LOADER ──────────────────────────────────
   const loader = document.getElementById('loader');
@@ -250,9 +275,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = bookingForm.querySelector('button[type="submit"]');
     btn.textContent = 'Sending…';
     btn.disabled = true;
+    openWhatsAppDraft(
+      document.querySelector('.booking-contact-links a[href*="wa.me"]')?.getAttribute('href') ||
+      document.querySelector('a[href*="wa.me"]')?.getAttribute('href'),
+      [
+        'Hello Elegant Salon & Spa,',
+        '',
+        'I would like to request an appointment.',
+        `Name: ${document.getElementById('b-name')?.value.trim() || ''}`,
+        `Email: ${document.getElementById('b-email')?.value.trim() || ''}`,
+        `Phone: ${document.getElementById('b-phone')?.value.trim() || ''}`,
+        `Service: ${document.getElementById('b-service')?.value || ''}`,
+        `Preferred Date: ${document.getElementById('b-date')?.value || ''}`,
+        `Preferred Time: ${document.getElementById('b-time')?.value || ''}`,
+        document.getElementById('b-notes')?.value.trim() ? `Special Requests: ${document.getElementById('b-notes').value.trim()}` : ''
+      ]
+    );
     setTimeout(() => {
       bookingForm.style.display = 'none';
-      document.getElementById('bookingSuccess').style.display = 'flex';
+      const success = document.getElementById('bookingSuccess');
+      success.innerHTML = '<i class="fas fa-check-circle"></i> WhatsApp draft opened! Send the message to complete your booking request.';
+      success.style.display = 'flex';
     }, 1200);
   });
 
@@ -270,11 +313,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = contactForm.querySelector('button[type="submit"]');
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
     btn.disabled = true;
+    const inputs = contactForm.querySelectorAll('input, textarea');
+    openEmailDraft(
+      document.querySelector('.contact-card a[href^="mailto:"]')?.getAttribute('href'),
+      inputs[2]?.value.trim() || 'Salon Website Inquiry',
+      [
+        'Hello Elegant Salon & Spa,',
+        '',
+        `Name: ${inputs[0]?.value.trim() || ''}`,
+        `Email: ${inputs[1]?.value.trim() || ''}`,
+        '',
+        inputs[3]?.value.trim() || ''
+      ]
+    );
     setTimeout(() => {
       contactForm.reset();
       btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
       btn.disabled = false;
       const success = document.getElementById('contactSuccess');
+      success.innerHTML = '<i class="fas fa-check-circle"></i> Email draft opened! Send it from your mail app to finish your inquiry.';
       success.style.display = 'flex';
       setTimeout(() => { success.style.display = 'none'; }, 5000);
     }, 1400);
@@ -283,9 +340,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── NEWSLETTER FORM ───────────────────────────
   document.getElementById('newsletterForm')?.addEventListener('submit', e => {
     e.preventDefault();
+    const form = e.target;
+    const emailInput = form.querySelector('input[type="email"]');
+    const email = emailInput?.value.trim();
+    if (!email) return;
+    
+    openWhatsAppDraft(
+      document.querySelector('.booking-contact-links a[href*="wa.me"]')?.getAttribute('href') ||
+      document.querySelector('a[href*="wa.me"]')?.getAttribute('href'),
+      [
+        'Hello Elegant Salon & Spa,',
+        '',
+        'I would like to subscribe to the newsletter:',
+        `Email: ${email}`
+      ]
+    );
+    
     const success = document.getElementById('newsletterSuccess');
     success.style.display = 'flex';
-    e.target.reset();
+    form.reset();
+    setTimeout(() => { success.style.display = 'none'; }, 5000);
   });
 
   // ── BACK TO TOP ───────────────────────────────
